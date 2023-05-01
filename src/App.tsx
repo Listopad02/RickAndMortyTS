@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { FC } from "react";
+import { Root } from "./pages/Root";
+import { Route, Routes } from "react-router"
+import Characters from "./pages/Characters"
+import CharacterDetails from "./pages/CharacterDetails"
 
-function App() {
+enum Links {
+  characters = "/",
+  characterDetails = "/characterDetails/:id"
+}
+
+const App: FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Root>
+      <Routes>
+        <Route path={Links.characters} element={<Characters />} />  
+        <Route path={Links.characterDetails} element={<CharacterDetails />} />
+      </Routes>
+    </Root>
   );
 }
 
