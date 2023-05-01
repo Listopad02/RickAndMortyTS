@@ -1,0 +1,14 @@
+.Navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 350px;
+
+    h1 {
+        color: rgb(32, 35, 41);
+        font-weight: 900;
+        font-family: "Tahoma", 'Segoe UI', 'Roboto', sans-serif;
+        font-size: 54px;
+    }
+}
